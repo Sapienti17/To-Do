@@ -28,13 +28,14 @@
 .form {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 30px 0px 0px 0px;
+    justify-content: space-between;
+    padding-left: 20px;
+    border-radius: 30px;
+    background: #7b717e;
 }
 
 .btn {
     width: 100px;
     height: 100%;
-    min-height: 50px;
-    border-radius: 25%;
+    border-radius: 30px;
 }
