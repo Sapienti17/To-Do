@@ -8,6 +8,11 @@ function addTask() {
         const li = document.createElement("li");
         li.innerText = inputText.value;
         listContainer.appendChild(li);
-        inputText.value = "";
+
+        const deleteBtn = document.createElement("button");
+        li.appendChild(deleteBtn);
+        deleteBtn.innerText = "X";
+        deleteBtn.classList.add("delete-btn");
     }
+    inputText.value = "";
 }
