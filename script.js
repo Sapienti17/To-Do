@@ -16,3 +16,11 @@ function addTask() {
     }
     inputText.value = "";
 }
+
+listContainer.addEventListener("click", (e) => {
+    if (e.target.tagName === "LI") {
+        e.target.classList.toggle("checked");
+    } else if (e.target.tagName === "BUTTON") {
+        e.target.parentElement.remove();
+    }
+});
