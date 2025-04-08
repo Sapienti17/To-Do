@@ -15,12 +15,24 @@ function addTask() {
         deleteBtn.classList.add("delete-btn");
     }
     inputText.value = "";
+    saveData();
 }
 
 listContainer.addEventListener("click", (e) => {
     if (e.target.tagName === "LI") {
         e.target.classList.toggle("checked");
+        saveData();
     } else if (e.target.tagName === "BUTTON") {
         e.target.parentElement.remove();
+        saveData();
     }
 });
+
+function saveData() {
+    localStorage.setItem("data", listContainer.innerHTML);
+}
+
+function showTask() {
+    listContainer.innerHTML = localStorage.getItem("data");
+}
+saveData();
