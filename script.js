@@ -18,15 +18,19 @@ function addTask() {
     saveData();
 }
 
-listContainer.addEventListener("click", (e) => {
-    if (e.target.tagName === "LI") {
-        e.target.classList.toggle("checked");
-        saveData();
-    } else if (e.target.tagName === "BUTTON") {
-        e.target.parentElement.remove();
-        saveData();
-    }
-});
+listContainer.addEventListener(
+    "click",
+    (e) => {
+        if (e.target.tagName === "LI") {
+            e.target.classList.toggle("checked");
+            saveData();
+        } else if (e.target.tagName === "BUTTON") {
+            e.target.parentElement.remove();
+            saveData();
+        }
+    },
+    false
+);
 
 function saveData() {
     localStorage.setItem("data", listContainer.innerHTML);
@@ -35,4 +39,4 @@ function saveData() {
 function showTask() {
     listContainer.innerHTML = localStorage.getItem("data");
 }
-saveData();
+showTask();
