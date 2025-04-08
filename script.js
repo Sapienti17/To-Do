@@ -1,6 +1,12 @@
 const inputText = document.getElementById("input-text");
 const listContainer = document.getElementById("list-container");
 
+inputText.addEventListener("keydown", function (elem) {
+    if (elem.key === "Enter") {
+        addTask();
+    }
+});
+
 function addTask() {
     if (inputText.value === "") {
         alert("Необходимо записать задачу!");
